@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "advent-of-code",
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-collections.git", from: "1.0.2"),
+    ],
     targets: [
         .executableTarget(
             name: "day01",
@@ -15,6 +18,11 @@ let package = Package(
         ),
         .executableTarget(
             name: "day03",
+            resources: [.copy("input.txt")]
+        ),
+        .executableTarget(
+            name: "day04",
+            dependencies: [.product(name: "Collections", package: "swift-collections")],
             resources: [.copy("input.txt")]
         ),
     ]
