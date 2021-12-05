@@ -25,5 +25,9 @@ let package = Package(
             dependencies: [.product(name: "Collections", package: "swift-collections")],
             resources: [.copy("input.txt")]
         ),
+        .executableTarget(
+            name: "day05",
+            resources: [.copy("input.txt")]
+        ),
     ]
 )
