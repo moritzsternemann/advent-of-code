@@ -1,8 +1,14 @@
+//
+//  main.swift
+//  day03
+//
+//  Created by Moritz Sternemann on 03.12.21.
+//
+
+import Common
 import Foundation
 
-let inputURL = Bundle.module.url(forResource: "input", withExtension: "txt")!
-let input = try Data(contentsOf: inputURL)
-let numbers = String(decoding: input, as: UTF8.self)
+let numbers = try Input.loadInput(in: .module)
     .split(separator: "\n")
     .map(String.init)
 

@@ -11,23 +11,30 @@ let package = Package(
         .target(name: "Common"),
         .executableTarget(
             name: "day01",
+            dependencies: [.target(name: "Common")],
             resources: [.copy("input.txt")]
         ),
         .executableTarget(
             name: "day02",
+            dependencies: [.target(name: "Common")],
             resources: [.copy("input.txt")]
         ),
         .executableTarget(
             name: "day03",
+            dependencies: [.target(name: "Common")],
             resources: [.copy("input.txt")]
         ),
         .executableTarget(
             name: "day04",
-            dependencies: [.product(name: "Collections", package: "swift-collections")],
+            dependencies: [
+                .target(name: "Common"),
+                .product(name: "Collections", package: "swift-collections")
+            ],
             resources: [.copy("input.txt")]
         ),
         .executableTarget(
             name: "day05",
+            dependencies: [.target(name: "Common")],
             resources: [.copy("input.txt")]
         ),
     ]

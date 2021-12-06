@@ -1,8 +1,14 @@
+//
+//  main.swift
+//  day05
+//
+//  Created by Moritz Sternemann on 05.12.21.
+//
+
+import Common
 import Foundation
 
-let inputURL = Bundle.module.url(forResource: "input", withExtension: "txt")!
-let inputData = try Data(contentsOf: inputURL)
-let input = String(decoding: inputData, as: UTF8.self)
+let input = try Input.loadInput(in: .module)
     .split(separator: "\n")
     .map(String.init)
 let diagramSize = 1000

@@ -1,7 +1,12 @@
-import Foundation
+//
+//  main.swift
+//  day02
+//
+//  Created by Moritz Sternemann on 02.12.21.
+//
 
-let inputURL = Bundle.module.url(forResource: "input", withExtension: "txt")!
-let input = try Data(contentsOf: inputURL)
+import Common
+import Foundation
 
 enum Command {
     case forward(Int)
@@ -9,7 +14,7 @@ enum Command {
     case down(Int)
 }
 
-let commands = String(decoding: input, as: UTF8.self)
+let commands = try Input.loadInput(in: .module)
     .split(separator: "\n")
     .compactMap { line -> Command? in
         let parts = line.split(separator: " ")
