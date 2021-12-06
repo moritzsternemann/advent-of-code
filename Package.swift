@@ -8,6 +8,7 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-collections.git", from: "1.0.2"),
     ],
     targets: [
+        .target(name: "Common"),
         .executableTarget(
             name: "day01",
             resources: [.copy("input.txt")]
