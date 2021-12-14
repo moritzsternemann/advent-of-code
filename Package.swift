@@ -6,6 +6,7 @@ let package = Package(
     name: "advent-of-code",
     dependencies: [
         .package(url: "https://github.com/apple/swift-collections.git", from: "1.0.2"),
+        .package(url: "https://github.com/apple/swift-algorithms.git", from: "1.0.0"),
     ],
     targets: [
         .target(name: "Common"),
@@ -75,6 +76,14 @@ let package = Package(
         .executableTarget(
             name: "day13",
             dependencies: [.target(name: "Common")],
+            resources: [.copy("input_sample.txt"), .copy("input.txt")]
+        ),
+        .executableTarget(
+            name: "day14",
+            dependencies: [
+                .target(name: "Common"),
+                .product(name: "Algorithms", package: "swift-algorithms")
+            ],
             resources: [.copy("input_sample.txt"), .copy("input.txt")]
         ),
     ]
