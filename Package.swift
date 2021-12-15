@@ -86,5 +86,10 @@ let package = Package(
             ],
             resources: [.copy("input_sample.txt"), .copy("input.txt")]
         ),
+        .executableTarget(
+            name: "day15",
+            dependencies: [.target(name: "Common")],
+            resources: [.copy("input_sample.txt"), .copy("input.txt")]
+        ),
     ]
 )
