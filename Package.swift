@@ -101,5 +101,13 @@ let package = Package(
             dependencies: [.target(name: "Common")],
             resources: [.copy("input_sample.txt"), .copy("input.txt")]
         ),
+        .executableTarget(
+            name: "day18",
+            dependencies: [
+                .target(name: "Common"),
+                .product(name: "Algorithms", package: "swift-algorithms")
+            ],
+            resources: [.copy("input_sample.txt"), .copy("input.txt")]
+        ),
     ]
 )
