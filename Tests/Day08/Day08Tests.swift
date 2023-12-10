@@ -5,10 +5,10 @@ final class Day08Tests: XCTestCase, SolutionTest {
     typealias SUT = Day08
 
     func testPartOne() throws {
-        try XCTAssertEqual(sut.runPartOne(), "not implemented")
+        try XCTAssertEqual(sut.runPartOne(), 6)
     }
 
     func testPartTwo() throws {
-        try XCTAssertEqual(sut.runPartTwo(), "not implemented")
+        try XCTAssertEqual(sut.runPartTwo(), 6)
     }
 }
