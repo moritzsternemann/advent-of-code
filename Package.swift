@@ -16,6 +16,7 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-algorithms.git", from: "1.2.0"),
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.2.3"),
         .package(url: "https://github.com/apple/swift-collections.git", from: "1.0.5"),
+        .package(url: "https://github.com/apple/swift-numerics.git", revision: "1883189574c7be40112a712d9b2d49ac5b3ac65f"),
     ],
     targets: [
         .executableTarget(
@@ -24,6 +25,7 @@ let package = Package(
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 .product(name: "Collections", package: "swift-collections"),
+                .product(name: "Numerics", package: "swift-numerics"),
             ],
             path: "Sources",
             resources: inputFiles
