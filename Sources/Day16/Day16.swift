@@ -96,11 +96,11 @@ extension Day16 {
         }
 
         func movedForward() -> Beam {
-            Beam(direction, location.moved(to: direction))
+            Beam(direction, location.moved(into: direction))
         }
 
         func moved(to direction: Direction) -> Beam {
-            Beam(direction, location.moved(to: direction))
+            Beam(direction, location.moved(into: direction))
         }
     }
 }

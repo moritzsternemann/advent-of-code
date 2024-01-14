@@ -45,7 +45,7 @@ struct Day17: Solution {
                     newDirectionCount = 1
                 }
 
-                let newLocation = current.location.moved(to: direction)
+                let newLocation = current.location.moved(into: direction)
                 if let blockValue = city[newLocation] {
                     let newDistance = current.dist + blockValue
                     let bestKey = BestPathKey(location: newLocation, direction: direction, directionCount: newDirectionCount)
