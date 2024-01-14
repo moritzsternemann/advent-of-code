@@ -4,6 +4,16 @@ enum Direction: CaseIterable {
     case south
     case east
 
+    init?(directionCode: Character) {
+        switch directionCode {
+        case "u", "U": self = .north
+        case "r", "R": self = .east
+        case "d", "D": self = .south
+        case "l", "L": self = .west
+        default: return nil
+        }
+    }
+
     var isVertical: Bool {
         self == .north || self == .south
     }
