@@ -14,27 +14,30 @@ struct Day16: Solution {
     }
 
     func runPartTwo() -> Int {
+        let (minX, maxX, minY, maxY) = grid.limits()
+        let (topLeft, topRight, bottomLeft, bottomRight) = grid.corners()
+
         let startBeams = grid.allPoints
             .filter {
                 // only edges
-                $0.x == grid.minX || $0.y == grid.minY || $0.x == grid.maxX || $0.y == grid.maxY
+                $0.x == minX || $0.y == minY || $0.x == maxX || $0.y == maxY
             }
             .flatMap { point -> [Beam] in
-                return if point == grid.topLeft {
+                return if point == topLeft {
                     [Direction.east, .south].map { Beam($0, point) }
-                } else if point == grid.topRight {
+                } else if point == topRight {
                     [Direction.west, .south].map { Beam($0, point) }
-                } else if point == grid.bottomLeft {
+                } else if point == bottomLeft {
                     [Direction.east, .north].map { Beam($0, point) }
-                } else if point == grid.bottomRight {
+                } else if point == bottomRight {
                     [Direction.west, .north].map { Beam($0, point) }
-                } else if point.y == grid.minY {
+                } else if point.y == minY {
                     [Beam(.south, point)]
-                } else if point.y == grid.maxY {
+                } else if point.y == maxY {
                     [Beam(.north, point)]
-                } else if point.x == grid.minX {
+                } else if point.x == minX {
                     [Beam(.east, point)]
-                } else if point.x == grid.maxX {
+                } else if point.x == maxX {
                     [Beam(.west, point)]
                 } else {
                     []

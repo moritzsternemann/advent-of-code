@@ -23,8 +23,9 @@ struct Day17: Solution {
 
         queue.insert(Cell(dist: 0, location: .zero, directionCount: 0))
 
+        let bottomRight = city.bottomRight()
         while let current = queue.popMin() {
-            if current.location == city.bottomRight,
+            if current.location == bottomRight,
                (!isPart2 || current.directionCount >= 4) {
                 return current.dist
             }
