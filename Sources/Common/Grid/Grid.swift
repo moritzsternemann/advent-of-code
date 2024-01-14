@@ -1,4 +1,4 @@
-protocol Grid {
+protocol Grid: CustomStringConvertible {
     associatedtype Value
     var storage: [Point: Value] { get }
 
@@ -96,5 +96,18 @@ extension Grid {
 
     subscript(_ point: Point) -> Value? {
         storage[point]
+}
+
+extension Grid {
+    var description: String {
+        let (minX, maxX, minY, maxY) = limits()
+        return (minY...maxY).map { y in
+            (minX...maxX).map { x in
+                guard let value = storage[Point(x: x, y: y)] else { return "." }
+                return String(describing: value)
+            }
+            .joined()
+        }
+        .joined(separator: "\n")
     }
 }
