@@ -13,6 +13,10 @@ struct Point: Equatable, Hashable, CustomStringConvertible {
         }
     }
 
+    func distance(to other: Point) -> Int {
+        abs(other.x - x) + abs(other.y - y)
+    }
+
     var description: String {
         "[\(x),\(y)]"
     }
