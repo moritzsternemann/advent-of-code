@@ -3,10 +3,10 @@ import Collections
 struct Day16: Solution {
     static let day = 16
 
-    private let grid: Grid
+    private let grid: CharacterGrid
 
     init(input: String) {
-        self.grid = Grid(input: input)
+        self.grid = CharacterGrid(input: input)
     }
 
     func runPartOne() -> Int {
@@ -88,9 +88,9 @@ struct Day16: Solution {
 extension Day16 {
     struct Beam: Hashable {
         var direction: Direction
-        var location: Grid.Point
+        var location: Point
 
-        init(_ direction: Direction, _ location: Grid.Point) {
+        init(_ direction: Direction, _ location: Point) {
             self.direction = direction
             self.location = location
         }
