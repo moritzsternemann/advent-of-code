@@ -4,12 +4,12 @@ struct Point: Equatable, Hashable, CustomStringConvertible {
 
     static var zero: Point { Point(x: 0, y: 0) }
 
-    func moved(to direction: Direction) -> Point {
+    func moved(to direction: Direction, by distance: Int = 1) -> Point {
         return switch direction {
-        case .north: Point(x: x, y: y - 1)
-        case .west: Point(x: x - 1, y: y)
-        case .south: Point(x: x, y: y + 1)
-        case .east: Point(x: x + 1, y: y)
+        case .north: Point(x: x, y: y - distance)
+        case .west: Point(x: x - distance, y: y)
+        case .south: Point(x: x, y: y + distance)
+        case .east: Point(x: x + distance, y: y)
         }
     }
 
