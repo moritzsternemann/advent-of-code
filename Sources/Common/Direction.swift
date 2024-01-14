@@ -1,4 +1,4 @@
-enum Direction {
+enum Direction: CaseIterable {
     case north
     case west
     case south
@@ -27,6 +27,15 @@ enum Direction {
         case .west: .north
         case .south: .west
         case .east: .south
+        }
+    }
+
+    var opposite: Direction {
+        return switch self {
+        case .north: .south
+        case .west: .east
+        case .south: .north
+        case .east: .west
         }
     }
 
